@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,161 +11,134 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
-.image{
-    height: 100px;
-    width: 200px;
-}
+
 .container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
-}
-.cool-font {
-    font-family: 'Arial Black', sans-serif; 
-    font-size: 28px;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 2px; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+    max-width: 1200px;
 }
 
+.image {
+    height: auto;
+    max-width: 100%;
+}
+
+.cool-font {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 2rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Header and Footer */
 header, footer {
     background-color: skyblue;
     color: black;
-    padding: 10px 0;
+    padding: 15px 0;
+    text-align: center;
 }
 
 header nav ul, footer ul {
     list-style-type: none;
-    text-align: center;
-    background-color: skyblue;
+    padding: 0;
 }
-.center-nav {
+
+header nav ul {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
+
 header nav ul li, footer ul li {
-    display: inline;
-    margin: 0 10px;
+    margin: 5px 15px;
 }
 
 header nav ul li a, footer ul li a {
     text-decoration: none;
     color: black;
-    padding: 5px 10px;
     font-weight: bold;
 }
 
-header nav ul li a:hover, footer ul li a:hover {
-    transform: scale(1.1);
-}
-
+/* Banner */
 .banner {
     background-color: skyblue;
-    padding: 50px 0;
+    padding: 40px 0;
     text-align: center;
 }
 
 .banner h1 {
-    margin-bottom: 20px;
     color: #333;
-    font-size: 3rem;
+    font-size: 2.5rem;
     letter-spacing: 2px;
 }
+
+/* Buttons */
 .btn {
     display: inline-block;
     background-color: blue;
-    color: #fff;
+    color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+.btn:hover {
+    background-color: darkblue;
+    transform: scale(1.05);
+}
+
+/* Responsive Sections */
+section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 20px;
+}
+
+#home, #about, #get-involved, #resources, #contact, #gallery, #water-facts {
+    background-image: url("bb.jpg");
+    color: aliceblue;
+}
+
+/* Responsive Team Cards */
 .team-cards {
     display: flex;
-    justify-content: space-around;
-    align-items: stretch; 
+    justify-content: center;
     flex-wrap: wrap;
-    height: 200px;
-    width: 200px;
+    gap: 20px;
 }
-.card h-100{
-    background-color: skyblue;
-}
+
 .card {
-    transition: transform 0.2s ease-in-out;
-}
-
-.card:hover {
-    transform: scale(1.05); 
-}
-
-@media (max-width: 992px) {
-    .row-cols-md-3 > .col {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-}
-.get-involved-item {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    margin-bottom: 20px;
-}
-
-.get-involved-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-}
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
+    width: 300px;
+    background: skyblue;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
     transition: transform 0.3s ease;
 }
 
-.gallery-item .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.card:hover {
+    transform: scale(1.05);
 }
 
-.gallery-item:hover .overlay {
-    opacity: 1;
-}
-
-.gallery-item .overlay h3,
-.gallery-item .overlay p {
-    margin: 0;
-    padding: 5px;
-    text-align: center;
-}
-
-.gallery-item .overlay p {
-    font-size: 14px;
-}
-
+/* Responsive Forms */
 form {
-    margin-top: 20px;
+    max-width: 600px;
+    width: 90%;
+    margin: 20px auto;
 }
 
 form label, form input, form textarea, form button {
-    display: block;
     width: 100%;
     margin-bottom: 10px;
 }
@@ -177,182 +151,72 @@ form input, form textarea {
 
 form button {
     background-color: #333;
-    color: #fff;
+    color: white;
     padding: 10px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
 form button:hover {
     background-color: #555;
 }
 
-footer {
-    text-align: center;
-    margin-top: 20px;
-    background-color: skyblue;
-    color: black;
-    padding: 20px 0;
-}
-
-footer p, footer ul {
-    margin-bottom: 10px;
-}
-
-footer ul li a {
-    transition: color 0.3s ease;
-}
-
-footer ul li a:hover {
-    color: black;
-    background-color: skyblue;
-}
-#home{
-    color: aliceblue;
-    width: 100%;
-    height: 100vh;
-    background-image: url("bb.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: table;
-}
-
-#about{
-    color: aliceblue;
-    background-image: url("bb.jpg");
-    background-color: rgb(189, 246, 254);
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: table;
-}
-#get-involved{
-    background-image: url("bb.jpg");
-    background-color:none;
-      width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: table;
-}
-#resources{
-    background-image: url("bb.jpg");
-    color: aliceblue;
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: table;
-}
-#contact{
-    background-image: url("bb.jpg");
-    color: aliceblue;
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: table;
-    color: aliceblue;
-}
-#gallery{
-    color: aliceblue;
-    background-image: url("bb.jpg");
-    background-color: rgb(189, 246, 254);
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: table;
-}
-#water-facts{
-    color: rgb(13, 13, 13);
-    background-image: url("bb.jpg");
-    background-color: rgb(189, 246, 254);
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    display: table;
-}
-.containe{
-    width: 1000px;
+/* Responsive Gallery */
+.gallery-item {
     position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.gallery-item img {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
     display: flex;
-    justify-content: space-between;
-}
-.containe .car{
-    position: relative;
-    cursor: pointer;
-}
-.containe .car .face{
-    width: 350px;
-    height: 250px;
-    transition: 0.5s;
-}
-.containe .car .face.face1{
-    position: relative;
-    background: #023446;
     justify-content: center;
-    display: flex;
     align-items: center;
-    z-index: 1;
-    transform: translateY(100px);
+    opacity: 0;
+    transition: opacity 0.3s;
 }
-.containe .car:hover .face.face1{
-    background: #79e0fa;
-    transform: translateY(0);
-}
-.containe .car .face.face1 .conten{
-    opacity: 0.2;
-    transition: 0.5ms;
-}
-.containe .car:hover .face.face1 .conten{
+
+.gallery-item:hover .overlay {
     opacity: 1;
 }
-.containe .car .face.face1 .conten img{
-    max-width: 350px;
-}
-.containe .car .face.face1 .conten h3{
-    margin: 10px 0 0;
-    padding: 0;
-    color: #fff;
-    text-align: center;
-    font-size: 2em;
-}
-.containe .car .face.face2{
-    position: relative;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-    box-shadow: 0 20px 50px rgba(0, 0 , 0 , 0.8);
-    transform: translateY(-100px);
-}
-.containe .car .face.face2{
-    transform: translateY(0);
-}
-.containe .car .face.face2 .conten a{
-    margin: 15px;
-    display: inline-block;
-    text-decoration: none;
-    font-weight: 900;
-    color: #333;
-    padding: 5px;
-    border: 1px solid #333;
-}
-.containe .car .face.face2 .conten a:hover{
-    background: #333;
-    color: #fff;
+
+/* Responsive Design - Mobile */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .team-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        min-height: 50vh;
+        padding: 40px 20px;
+    }
 }
